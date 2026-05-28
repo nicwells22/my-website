@@ -1,0 +1,113 @@
+:root {
+  --color-alpine-sky: #4E78AD;
+  --color-deep-summit-blue: #223A5E;
+  --color-snowfield-white: #F3F6F8;
+  --color-granite-gray: #4B4F56;
+  --color-evergreen: #1F332D;
+  --color-snow-shadow: #B9C5D3;
+  --color-trail-marker-tan: #B59A67;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-height: 100%;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: var(--color-deep-summit-blue);
+  background:
+    radial-gradient(circle at 20% 15%, rgba(78, 120, 173, 0.18), transparent 28rem),
+    radial-gradient(circle at 85% 80%, rgba(181, 154, 103, 0.16), transparent 24rem),
+    linear-gradient(145deg, var(--color-snowfield-white) 0%, #ffffff 58%, rgba(185, 197, 211, 0.35) 100%);
+}
+
+.site-shell {
+  display: grid;
+  min-height: 100vh;
+  place-items: center;
+  padding: clamp(1rem, 4vw, 3rem);
+}
+
+.hero {
+  position: relative;
+  width: min(100%, 44rem);
+  padding: clamp(2.25rem, 7vw, 5.5rem);
+  border: 1px solid rgba(185, 197, 211, 0.8);
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.78);
+  box-shadow: 0 28px 80px rgba(34, 58, 94, 0.13);
+  text-align: center;
+  backdrop-filter: blur(18px);
+}
+
+h1 {
+  max-width: none;
+  margin: 0;
+  color: var(--color-deep-summit-blue);
+  font-size: clamp(3rem, 10vw, 5.75rem);
+  line-height: 0.98;
+  letter-spacing: -0.065em;
+}
+
+.ridge-line {
+  width: min(14rem, 64%);
+  height: 4px;
+  margin: clamp(1.75rem, 5vw, 3rem) auto;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--color-evergreen), var(--color-alpine-sky), var(--color-trail-marker-tan));
+}
+
+.intro,
+.supporting,
+.secondary-thought {
+  max-width: 42rem;
+  margin: 0 auto;
+  color: var(--color-granite-gray);
+  font-size: clamp(1.12rem, 2vw, 1.35rem);
+  line-height: 1.7;
+}
+
+.intro {
+  color: var(--color-deep-summit-blue);
+  font-size: clamp(1.35rem, 2.8vw, 1.8rem);
+  font-weight: 700;
+}
+
+.supporting {
+  margin-top: 0.9rem;
+}
+
+.thought-divider {
+  width: 4rem;
+  height: 1px;
+  margin: clamp(1.75rem, 4vw, 2.75rem) auto;
+  background: var(--color-snow-shadow);
+}
+
+.secondary-thought {
+  max-width: 34rem;
+  color: var(--color-deep-summit-blue);
+  font-size: clamp(1.05rem, 1.8vw, 1.22rem);
+  font-style: italic;
+}
+
+@media (max-width: 640px) {
+  .site-shell {
+    padding: 1rem;
+  }
+
+  .hero {
+    border-radius: 18px;
+    padding: 2rem 1.5rem;
+  }
+
+  h1 {
+    letter-spacing: -0.05em;
+  }
+}
