@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thoughts | Nicholas Wells</title>
+  <meta name="description" content="Thoughts and writing by Nicholas Wells.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <nav class="site-nav" aria-label="Primary">
+    <a class="nav-brand" href="index.html">NW</a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="blog.html" aria-current="page">Thoughts</a>
+    </div>
+  </nav>
+
+  <main class="site-shell blog-shell">
+    <!-- Post list view -->
+    <section id="post-list-view" class="blog-panel" hidden>
+      <header class="blog-header">
+        <h1>Thoughts</h1>
+        <div class="ridge-line" aria-hidden="true"></div>
+        <p class="blog-subtitle">Notes, ideas, and stories as they come.</p>
+      </header>
+      <ul id="post-list" class="post-list"></ul>
+    </section>
+
+    <!-- Single post view -->
+    <article id="post-view" class="blog-panel" hidden>
+      <a id="back-link" class="back-link" href="blog.html">&larr; All thoughts</a>
+      <header class="post-meta">
+        <h1 id="post-title"></h1>
+        <p id="post-date" class="post-date"></p>
+        <div class="ridge-line" aria-hidden="true"></div>
+      </header>
+      <div id="post-content" class="post-content markdown-body"></div>
+    </article>
+
+    <!-- Status / errors -->
+    <section id="status-view" class="blog-panel status-panel">
+      <p id="status-message">Loading thoughts&hellip;</p>
+    </section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/marked@12.0.2/marked.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/dompurify@3.1.6/dist/purify.min.js"></script>
+  <script src="blog.js"></script>
+</body>
+</html>
