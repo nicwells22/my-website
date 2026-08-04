@@ -20,7 +20,10 @@ function showStatus(message) {
 
 function formatDate(dateString) {
   if (!dateString) return "";
-  const date = new Date(dateString);
+  const parts = /^(\d{4})-(\d{2})-(\d{2})$/.exec(dateString);
+  const date = parts
+    ? new Date(Number(parts[1]), Number(parts[2]) - 1, Number(parts[3]))
+    : new Date(dateString);
   if (Number.isNaN(date.getTime())) return dateString;
   return date.toLocaleDateString(undefined, {
     year: "numeric",
