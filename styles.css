@@ -16,6 +16,12 @@ html {
   min-height: 100%;
 }
 
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
 body {
   min-height: 100vh;
   margin: 0;
@@ -306,16 +312,36 @@ h1 {
 }
 
 .post-content .footnotes {
-  font-size: 0.9rem;
+  font-size: 0.9em;
   line-height: 1.65;
 }
 
 .post-content .footnotes li {
   margin-bottom: 0.35rem;
+  /* Clear the sticky nav when jumping to a footnote. */
+  scroll-margin-top: 4.5rem;
+}
+
+.post-content .footnotes li:target {
+  background: rgba(78, 120, 173, 0.12);
+  border-radius: 6px;
+  box-shadow: 0 0 0 0.4rem rgba(78, 120, 173, 0.12);
 }
 
 .post-content .footnotes p {
   margin: 0;
+}
+
+/* Back-references: bigger thumb target on touch screens. */
+.post-content .footnotes [data-footnote-backref] {
+  display: inline-block;
+  padding: 0.25em 0.5em;
+  text-decoration: none;
+}
+
+/* Clear the sticky nav when jumping back up to a reference. */
+.post-content sup {
+  scroll-margin-top: 4.5rem;
 }
 
 .sr-only {
