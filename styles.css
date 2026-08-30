@@ -293,6 +293,43 @@ h1 {
   border-radius: 12px;
 }
 
+.post-content sup a {
+  padding: 0 0.15em;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.post-content hr {
+  margin: 2.5rem 0 1.5rem;
+  border: 0;
+  border-top: 1px solid var(--color-snow-shadow);
+}
+
+.post-content .footnotes {
+  font-size: 0.9rem;
+  line-height: 1.65;
+}
+
+.post-content .footnotes li {
+  margin-bottom: 0.35rem;
+}
+
+.post-content .footnotes p {
+  margin: 0;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+}
+
 .status-panel {
   text-align: center;
   color: var(--color-granite-gray);

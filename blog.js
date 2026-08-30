@@ -6,6 +6,8 @@
 
 const MANIFEST_URL = "posts/posts.json";
 
+marked.use(markedFootnote({ description: "Notes", footnoteDivider: true }));
+
 const listView = document.getElementById("post-list-view");
 const postView = document.getElementById("post-view");
 const statusView = document.getElementById("status-view");
