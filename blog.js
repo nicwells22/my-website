@@ -61,7 +61,7 @@ function renderList(posts) {
 
     const link = document.createElement("a");
     link.className = "post-link";
-    link.href = `blog.html?post=${encodeURIComponent(post.slug)}`;
+    link.href = `posts/${encodeURIComponent(post.slug)}.html`;
 
     const title = document.createElement("span");
     title.className = "post-link-title";

@@ -59,7 +59,25 @@ Notes:
   double quotes.
 - Order doesn't matter — posts are automatically sorted newest-first by `date`.
 
-## 3. Preview locally (optional)
+## 3. Generate the shareable post page
+
+Each post also gets a static HTML page (`posts/<slug>.html`) with the post's
+title and summary baked into `<meta>` tags. This is what makes link previews
+(Facebook, LinkedIn, etc.) show the post title — the `blog.html?post=...` URL
+can't do that because those platforms don't run JavaScript.
+
+From the project root run:
+
+```
+.venv/Scripts/python.exe generate_posts.py
+```
+
+This creates one `posts/<slug>.html` file per entry in `posts.json`. Re-run it
+whenever you add a post or change a title, summary, or date. Commit the
+generated HTML files along with the markdown — the site has no build step, so
+they must be in the repo.
+
+## 4. Preview locally (optional)
 
 Because the site loads posts with `fetch`, you need to view it over http, not by
 double-clicking the file. From the project root run:
@@ -71,22 +89,24 @@ python -m http.server 8000
 Then open <http://localhost:8000/blog.html> and confirm your post appears in the
 list and opens correctly.
 
-## 4. Publish
+## 5. Publish
 
 Commit and push your changes:
 
 ```
-git add posts/
+git add posts/ generate_posts.py
 git commit -m "Add post: My New Idea"
 git push
 ```
 
-Your new thought is now live.
+Your new thought is now live. When sharing a post on social media, use the
+`posts/<slug>.html` URL — that's the link whose preview shows the post title.
 
 ## Quick checklist
 
 - [ ] Created `posts/<slug>.md`
 - [ ] Added a matching entry in `posts.json` (`slug`, `title`, `date`, `file`, `summary`)
 - [ ] `posts.json` is still valid JSON (commas + double quotes)
+- [ ] Ran `generate_posts.py` and the new `posts/<slug>.html` exists
 - [ ] Previewed at `/blog.html`
 - [ ] Committed and pushed
